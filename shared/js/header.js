@@ -9,12 +9,10 @@
  */
 async function logOut() {
     try {
-        const csrfToken = document.cookie.split('csrftoken=')[1].split(';')[0];
         await fetch(`${API_BASE_URL}logout/`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken
+                'Content-Type': 'application/json'
             },
             credentials: 'include',
         });
